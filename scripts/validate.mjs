@@ -34,6 +34,11 @@ const required = [
   'color-presets.js',
   'agents/openai.yaml',
   'report-catalog.md',
+  'presentation-catalog.md',
+  'references/presentation.md',
+  'templates/presentations/index.html',
+  'templates/presentations/presentation.zh.html',
+  'templates/presentations/presentation.en.html',
   'templates/reports/index.html',
   ...requiredColorTemplates,
 ];
@@ -179,6 +184,15 @@ for (const backup of ['F17 Candlestick', 'F15 Tick Box', 'L20 Parallel Coordinat
 if (!catalogSource.includes('主力与后备')) failures.push('catalog.md 缺少主力/后备说明');
 for (const role of ['`BG`', '`TXT`', '`MUT`', '`GRID`', '`DATA`']) {
   if (!skillSource.includes(role)) failures.push(`SKILL.md 的 custom 色板规则缺少角色 ${role}`);
+}
+
+const presentationCatalogSource = fs.readFileSync(path.join(root, 'presentation-catalog.md'), 'utf8');
+for (const marker of ['| P01 |', '| P04 |', '| P08 |', 'presentation.zh.html', 'presentation.en.html']) {
+  if (!presentationCatalogSource.includes(marker)) failures.push(`presentation-catalog.md 缺少 ${marker}`);
+}
+const presentationReference = fs.readFileSync(path.join(root, 'references/presentation.md'), 'utf8');
+for (const marker of ['1600 × 900', 'prefers-reduced-motion', 'catalog.md']) {
+  if (!presentationReference.includes(marker)) failures.push(`references/presentation.md 缺少 ${marker}`);
 }
 
 const reportCatalogSource = fs.readFileSync(path.join(root, 'report-catalog.md'), 'utf8');
