@@ -89,7 +89,7 @@ function walk(dir) {
 }
 
 function rel(file) {
-  return path.relative(root, file);
+  return path.relative(root, file).split(path.sep).join('/');
 }
 
 function lineNumber(source, index) {
