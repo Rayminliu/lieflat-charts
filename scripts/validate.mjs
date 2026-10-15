@@ -39,6 +39,12 @@ const required = [
   'templates/presentations/index.html',
   'templates/presentations/presentation.zh.html',
   'templates/presentations/presentation.en.html',
+  'templates/presentations/complete-porcelain.html',
+  'templates/presentations/complete-porcelain-zh.html',
+  'templates/presentations/complete-palm.html',
+  'templates/presentations/complete-palm-zh.html',
+  'templates/presentations/complete-wire.html',
+  'templates/presentations/complete-wire-zh.html',
   'templates/reports/index.html',
   ...requiredColorTemplates,
 ];
@@ -187,7 +193,7 @@ for (const role of ['`BG`', '`TXT`', '`MUT`', '`GRID`', '`DATA`']) {
 }
 
 const presentationCatalogSource = fs.readFileSync(path.join(root, 'presentation-catalog.md'), 'utf8');
-for (const marker of ['| P01 |', '| P04 |', '| P08 |', 'presentation.zh.html', 'presentation.en.html']) {
+for (const marker of ['| P01 |', '| P04 |', '| P08 |', 'presentation.zh.html', 'presentation.en.html', 'complete-porcelain.html', 'complete-palm.html', 'complete-wire.html']) {
   if (!presentationCatalogSource.includes(marker)) failures.push(`presentation-catalog.md 缺少 ${marker}`);
 }
 const presentationReference = fs.readFileSync(path.join(root, 'references/presentation.md'), 'utf8');
@@ -292,7 +298,8 @@ for (const file of textFiles) {
     failures.push(`${rel(file)} 检测到 Math.random()，请改用确定性 rnd()`);
   }
 
-  const colorTemplate = relative.match(/^templates\/color\/.+-(porcelain|palm|wire)\.html$/);
+  const colorTemplate = relative.match(/^templates\/color\/.+-(porcelain|palm|wire)\.html$/)
+    ?? relative.match(/^templates\/presentations\/complete-(porcelain|palm|wire)(?:-zh)?\.html$/);
   if (colorTemplate) {
     const allowed = presetChannels.get(colorTemplate[1]);
     const literalPattern = /#(?:[0-9a-fA-F]{6}|[0-9a-fA-F]{3})\b|rgba?\(\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}(?:\s*,\s*(?:0|1|0?\.\d+))?\s*\)/g;
@@ -303,7 +310,7 @@ for (const file of textFiles) {
         failures.push(`${relative}:${lineNumber(source, match.index)} 颜色 ${match[0]} 不属于 ${colorTemplate[1]} 预设`);
       }
     }
-  } else if (relative !== 'color-presets.js' && !relative.startsWith('templates/reports/')) {
+  } else if (relative !== 'color-presets.js' && !relative.startsWith('templates/reports/') && relative !== 'templates/presentations/index.html') {
     for (const match of source.matchAll(/#[0-9a-fA-F]{6}\b/g)) {
       const hex = match[0];
       const channels = [

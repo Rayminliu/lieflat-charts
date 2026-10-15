@@ -62,7 +62,7 @@ Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化、PPT 演�
 1. 先确认主题、听众、语言、用途和材料范围；明确交付为 HTML 或 PDF 格式的 PPT，若用户要求 `.pptx` 先确认替代格式。
 2. 写逐页提纲：每页一个主要结论，记录来源、数据口径、图型编号、版式编号和待检查项。
 3. 在 `catalog.md` 先审计 Lupi Editorial 与 Lupi Basics，再把已锁定的真实图型放进 `presentation-catalog.md` 的 P04–P08 页面槽位。
-4. 默认复制 `templates/presentations/presentation.zh.html` 或 `.en.html`，替换所有示例内容；不拼接报告模板。
+4. 按已锁定的全局色系选模板：Mono 复制 `templates/presentations/presentation.zh.html` 或 `.en.html`；彩色预设复制对应的 `complete-porcelain` / `complete-palm` / `complete-wire`（各 19 页、中英双版、带入场动效），替换所有示例内容；不拼接报告模板。
 5. 验收导航、字体回退、动画生命周期、无障碍描述、打印分页和 1280×720 显示。
 
 演示模式规则详见 `references/presentation.md`。
@@ -362,8 +362,9 @@ report-catalog.md                # 先按场景选 R01–R12
 presentation-catalog.md            # 演示模式 P01–P10
 references/presentation.md          # 演示模式完整规则
 templates/presentations/index.html # 演示模板索引
-templates/presentations/presentation.zh.html # 中文 16:9 演示正本
-templates/presentations/presentation.en.html # English 16:9 deck source
+templates/presentations/presentation.zh.html # 中文 16:9 演示正本（Mono）
+templates/presentations/presentation.en.html # English 16:9 deck source (Mono)
+templates/presentations/complete-{porcelain,palm,wire}{,-zh}.html # 彩色完整版，19 页中英双版
 templates/reports/report-NN.zh.html  # 中文整页正本
 templates/reports/report-NN.en.html  # English full-page source
 templates/reports/index.html         # 本地可打开的模板索引
