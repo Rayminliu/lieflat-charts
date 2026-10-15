@@ -2,9 +2,9 @@
 
 中文 | [English](README.en.md)
 
-[![Lieflat Charts：以统一的字体、留白、线条和动效建立自己的视觉语法的数据可视化 skill](docs/assets/readme-hero-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts)
+[![Lieflat Charts：以统一的字体、留白、线条和动效建立自己的视觉语法的数据可视化 skill](docs/assets/readme-hero-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts&utm_source=github&utm_medium=readme&utm_campaign=lieflat-charts)
 
-Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化、PPT 演示与整页报告生成 skill，可供 moxt、Claude Code、Codex 及其他兼容 `SKILL.md` 的 AI agent 使用。本 skill 在 [moxt.ai](https://moxt.ai) 制作，同时提供 PPT 模式和报告模式，但默认产出图表；用户明确要求一套 PPT、幻灯片或可翻页汇报时，才进入 PPT 模式，生成 HTML 或 PDF 格式的 PPT；用户明确要求报告、年报、月报、白皮书、海报或 brief 时，才生成整页 HTML 报告。
+Lieflat Charts 是一套遵循 Agent Skills 格式的数据可视化、PPT 演示与整页报告生成 skill，可供 moxt、Claude Code、Codex 及其他兼容 `SKILL.md` 的 AI agent 使用。本 skill 在 [moxt.ai](https://moxt.ai?utm_source=github&utm_medium=readme&utm_campaign=lieflat-charts) 制作，同时提供 PPT 模式和报告模式，但默认产出图表；用户明确要求一套 PPT、幻灯片或可翻页汇报时，才进入 PPT 模式，生成 HTML 或 PDF 格式的 PPT；用户明确要求报告、年报、月报、白皮书、海报或 brief 时，才生成整页 HTML 报告。
 
 演示模式在用户明确要求做图表 PPT 后触发：Agent 选择合适的图表类型与色彩（Mono 或三套彩色预设），自动生成带入场动效、支持左右翻页的 HTML 格式 PPT；数据与图型仍根据用户材料确定。
 
@@ -165,9 +165,9 @@ Mono 黑白灰是稳定的保底方案，同时也有彩色模式，目前支持
 
 ### 推荐在 Moxt 中使用
 
-[![在 Moxt 中使用 Lieflat Charts](docs/assets/moxt-quick-start-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts)
+[![在 Moxt 中使用 Lieflat Charts](docs/assets/moxt-quick-start-zh.png)](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts&utm_source=github&utm_medium=readme&utm_campaign=lieflat-charts)
 
-Lieflat Charts 在 [Moxt](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts) 中完成设计、测试和持续迭代。它的设计规则、模板结构与文件工作流，都是围绕 Moxt 的 Agent 协作方式反复打磨的。
+Lieflat Charts 在 [Moxt](https://moxt.ai/zh-CN/hub?view=skill&id=lieflat-charts&utm_source=github&utm_medium=readme&utm_campaign=lieflat-charts) 中完成设计、测试和持续迭代。它的设计规则、模板结构与文件工作流，都是围绕 Moxt 的 Agent 协作方式反复打磨的。
 
 因此，在 Moxt 中使用时，Agent 能更顺畅地读取完整的设计规范、理解 Lieflat Charts 的视觉语言、调用对应模板，并在同一个工作区中持续预览和修改结果，更稳定地执行这套设计。
 
